@@ -1,0 +1,68 @@
+body {
+    text-align: center;
+}
+
+/* index.php */
+#header {
+    position:fixed; 
+    bottom:55%; 
+    width:100%; 
+    text-align:center; 
+    font-size:33pt;
+}
+#bookmarklet {
+    background-color: #DDDDDD; 
+    padding: 1px;
+    color: darkgreen; 
+    text-decoration: none; 
+    vertical-align: 1px;
+    border: 1px outset #DDDDDD;
+}
+#bar {
+    position:fixed; 
+    top:45%; 
+    right:20%; 
+    left:20%; 
+    height:2.3em;
+}
+#url {
+    position:absolute; 
+    top:0px; 
+    bottom: 0px; 
+    left:0px; 
+    right:20%;
+    padding: 0px 1em;
+    box-sizing: border-box;
+    direction:ltr;
+}
+#button {
+    position:absolute; 
+    top:0px; 
+    bottom: 0px; 
+    right:0px; 
+    left:80%; 
+}
+#panel {
+    top: 30%; 
+    left: 30%; 
+    position: fixed;
+}
+#footer {
+    position: fixed; 
+    bottom: 2em; 
+    width:100%;     
+}
+
+/*short.php*/
+#result {
+    position:fixed;
+    box-sizing: border-box;
+    font-size:3em;
+    text-align:center;
+    top:40%;
+    right:20%;
+    left:20%;
+    outline: none;
+    border: none;
+    direction:ltr;
+}

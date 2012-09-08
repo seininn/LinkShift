@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 
 //script to get the next token and save the (next token, long url)
@@ -7,16 +8,6 @@
 
 //given: url => long url
 
-?>
-
-<html>
-<head>
-<title>Linkshift</title>
-</head>
-<body style="text-align: center;">
-<h1>Short Link!</h1>
-
-<?php
 require 'functions.php';
 
 //check if long url is not set then exit
@@ -58,12 +49,24 @@ if (!$token) die("cannot generate short url");
 if (!add_long_url($token, $longurl)) die("cannot add long url");
 
 //display short url to user
-echo form_short_url($token);
-
+$out = form_short_url($token);
 ?>
 
-<div style="position: fixed; top: 90%; height: 100%; width: 100%;">
-	<p>LinkShift open source project available at <a href="https://github.com/BoSanad/LinkShift">Github</a></p>	
-</div>
-</body>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>linkshift</title>
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="ui.js" ></script>
+    </head>
+    <body onload='ui_string_update();document.getElementById("result").focus();document.getElementById("result").select();'> 
+        <div><span id="result-header">Use Ctrl+C to copy the url.</span> <a id="another" href="index.html">Shorten another link?</a></div>
+        <input id="result" type="text" value="<?php echo $out ?>" readonly="readonly" onclick="this.select()" onfocus="this.select()">
+        <div id="footer">
+            <span id="language-text">Interface language:</span> 
+            <a onclick="localStorage['lang'] = AR; ui_string_update();" href="#">اللغة عربية</a> -
+            <a onclick="localStorage['lang'] = EN; ui_string_update();" href="#">English</a> <br>
+	        <span id="guthub-text">LinkShift open source project available at</span> <a href="https://github.com/BoSanad/LinkShift">Github</a>
+        </div>
+    </body>
 </html>

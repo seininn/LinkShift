@@ -1,31 +1,42 @@
+<!DOCTYPE html>
 <?php
 	//script to get long url and shorten it
 	//then save it in database and show it to user
 	//Saleh Alsanad, @bo9lo7
 	//saleh [AT] angelic [DOT] com
-
+    
 require 'config.inc';
 
 ?>
 
 <html>
-<head>
-<title>linkshift</title>
-</head>
-<body style="text-align: center;">
-<div>
-<p>Drag this bookmarklet to your bookmarks to shorten links on the go <a style="background: none repeat scroll 0 0 #DDDDDD; color: darkgreen; text-decoration: none; border: 1px outset #DDDDDD; padding: 1px; vertical-align: 1px;" href="javascript:void(location.href='<?php echo API_BASE_URL."/short.php?url='+encodeURIComponent(location.href))" ?>">LinkShift</a></p>
-</div>
-<div style="top: 30%; left: 30%; position: fixed;">
-<h1>LinkShift</h1>
-<form method="post" action="short.php">
-	<label for="url">URL:</label>
-	<input type="text" name="url" size="60" /><br /><br />
-	<input type="submit" value="Shorten" />
-</form>
-</div>
-<div style="position: fixed; top: 90%; height: 100%; width: 100%;">
-	<p>LinkShift open source project available at <a href="https://github.com/BoSanad/LinkShift">Github</a></p>	
-</div>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>linkshift</title>
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="ui.js" ></script>
+    </head>
+    <body onload="ui_string_update()">
+        <div> 
+            <span id="bookmarklet-text">Drag this bookmarklet to your bookmarks to shorten links on the go </span>
+            <a id="bookmarklet" href="javascript:void(location.href='<?php echo API_BASE_URL."/short.php?url='+encodeURIComponent(location.href))" ?>">LinkShift</a>
+        </div>
+        
+        <h1 id="header">LinkShift</h1>
+        
+        <div id="bar">
+            <form method="post" action="short.php">
+	            <input id="url" type="text" name="url" placeholder="URL" tabindex="1" autofocus="autofocus" onkeydown="this.style.direction='ltr'">
+	            <input id="button" type="submit" value="Shorten" tabindex="2">
+            </form>
+        </div>
+        <div id="footer">
+            <span id="language-text">Interface language:</span> 
+            <a onclick="localStorage['lang'] = AR; ui_string_update();" href="#">اللغة عربية</a> -
+            <a onclick="localStorage['lang'] = EN; ui_string_update();" href="#">English</a> <br>
+	        <span id="guthub-text">LinkShift open source project available at</span> <a href="https://github.com/BoSanad/LinkShift">Github</a>
+        </div>
+    </body>
 </html>
+
+
