@@ -19,7 +19,7 @@ require 'config.inc';
     <body onload="ui_string_update()">
         <div> 
             <span id="bookmarklet-text">Drag this bookmarklet to your bookmarks to shorten links on the go </span>
-            <a id="bookmarklet" href="javascript:void(location.href='<?php echo API_BASE_URL."/short.php?url='+encodeURIComponent(location.href))" ?>">LinkShift</a>
+            <a id="bookmarklet" href="javascript:(function(){var f = document.createElement('form'), v = document.createElement('input');f.setAttribute('method', 'post');f.setAttribute('action', '<?php echo BASE_URL ?>/short.php');v.setAttribute('name', 'url');v.setAttribute('value', window.location.href);f.appendChild(v);f.submit();})()">LinkShift</a>
         </div>
         
         <h1 id="header">LinkShift</h1>
