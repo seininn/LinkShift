@@ -16,7 +16,7 @@ require 'config.inc';
         <link type="text/css" rel="stylesheet" href="style.css">
         <script type="text/javascript" src="ui.js" ></script>
     </head>
-    <body onload="ui_string_update()">
+    <body onload="ui_string_update();document.getElementById('url').focus()">
         <div> 
             <span id="bookmarklet-text">Drag this bookmarklet to your bookmarks to shorten links on the go </span>
             <a id="bookmarklet" href="javascript:(function(){var f = document.createElement('form'), v = document.createElement('input');f.setAttribute('method', 'post');f.setAttribute('action', '<?php echo BASE_URL ?>/short.php');v.setAttribute('name', 'url');v.setAttribute('value', window.location.href);f.appendChild(v);f.submit();})()">LinkShift</a>

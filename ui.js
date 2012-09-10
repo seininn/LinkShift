@@ -5,6 +5,7 @@ function ui_string_update(){
         document.body.setAttribute("lang", "ar");
     }
     else {
+        localStorage["lang"] = EN;
         document.body.style.direction="ltr";
         document.body.setAttribute("dir", "ltr");
         document.body.setAttribute("lang", "en");

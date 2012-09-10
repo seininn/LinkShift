@@ -24,12 +24,12 @@ body {
     right:20%; 
     left:20%; 
     height:2.3em;
+    text-align:center;
 }
 #url {
     position:absolute; 
-    top:0px; 
-    bottom: 0px; 
-    left:0px; 
+    height:100%;
+    width:80%; 
     right:20%;
     padding: 0px 1em;
     box-sizing: border-box;
@@ -37,8 +37,7 @@ body {
 }
 #button {
     position:absolute; 
-    top:0px; 
-    bottom: 0px; 
+    height:100%; 
     right:0px; 
     left:80%; 
 }
