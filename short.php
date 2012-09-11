@@ -60,8 +60,8 @@ $out = form_short_url($token);
         <script type="text/javascript" src="ui.js" ></script>
     </head>
     <body onload='ui_string_update();document.getElementById("result").focus();document.getElementById("result").select();'> 
-        <div><span id="result-header">Use Ctrl+C to copy the url.</span> <a id="another" href="index.html">Shorten another link?</a></div>
-        <input id="result" type="text" value="<?php echo $out ?>" readonly="readonly" onclick="this.select()" onfocus="this.select()">
+        <div><span id="result-header">Use Ctrl+C to copy the url.</span> <a id="another" href="/">Shorten another link?</a></div>
+        <input id="result" type="text" value="<?php echo $out; ?>" readonly="readonly" onclick="this.select()" onfocus="this.select()">
         <div id="footer">
             <span id="language-text">Interface language:</span> 
             <a onclick="localStorage['lang'] = AR; ui_string_update();" href="#">اللغة عربية</a> -
